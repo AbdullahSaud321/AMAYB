@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMAYB</title>
+    <link rel="icon" href="logo1.png">
+    <link rel="stylesheet" href="Services.css">
+    <link rel="stylesheet" href="Header_Footer.css">
+    
+</head>
+<body>
+    <header class="header">
+        <nav>
+          <input type="checkbox" id="menu-toggle" />
+          <label for="menu-toggle" class="menu-icon">&#9776;</label>
+  
+          <div class="logo">
+            <img src="logo1.png" alt="buid logo" />
+          </div>
+  
+          <ul class="menu">
+            <li><a href="index_admin.html">Home</a></li>
+            <li>
+              <a href="#">About</a>
+              <ul class="subtitle1">
+                <li><a href="about_us_admin.html">About Us</a></li>
+                <li><a href="about_library_admin.html">About The Library</a></li>
+              </ul>
+              <ul class="subtitle2">
+                <li><a href="about_us_admin.html">About Us</a></li>
+                <li><a href="about_library_admin.html">About The Library</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Services</a>
+              <ul class="subtitle1">
+                <li><a href="Items_Settings_admin.html">Items Settings</a></li>
+                <li>
+                  <a href="Meeting_Rooms_Settings_admin.html">Meeting Rooms Settings</a>
+                </li>
+                <li><a href="Requests_admin.html">Requests</a></li>
+              </ul>
+              <ul class="subtitle2">
+                <li><a href="Items_Settings_admin.html">Items Settings</a></li>
+                <li>
+                  <a href="Meeting_Rooms_Settings_admin.html">Meeting Rooms Settings</a>
+                </li>
+                <li><a href="Requests_admin.html">Requests</a></li>
+              </ul>
+            </li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+  
+  
+          </ul>
+                    <div class="feature">
+              <label class="darkmode">
+                <input type="checkbox" id="switch" />
+                <img class="sun" src="sun.png" />
+                <img class="moon" src="moon.png" />
+                <div class="back"></div>
+              </label>
+              <a class="viewusers" href="View Users.html">View Users</a>
+          <a href="profile_admin.html"><img class="profile-logo" src="user-128.png"/></a>
+            </div>
+        </nav>
+      </header>
+
+    <section>
+        <div class="container">
+            <div class="tabs">
+                <div id="student" class="tab active" style="cursor: pointer;">Student</div>
+                <div id="admin" class="tab" style="cursor: pointer;">Admin</div>
+                <div id="librarian" class="tab" style="cursor: pointer;">Librarian</div> <!-- New Tab -->
+            </div>
+
+            <div id="student-content" class="tab-content active">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search" id="searchInput1" onkeyup="filterTable('student-content')">
+                </div>
+                <div id="userTable1">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>ID</th>
+                                <th>User Type</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="scroll">
+                            <tr>
+                                <td>Abdullah</td>
+                                <td>Mansoor</td>
+                                <td>22000100</td>
+                                <td>Student</td>
+                                <td>
+                                    <button class="edit-btn" onclick="editUser(this)">Edit</button>
+                                    <button class="remove-btn" onclick="removeUser(this)">Remove</button>
+                                    <button class="save-btn" style="display: none;" onclick="saveUser(this)">Save</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Mahmoud</td>
+                                <td>Mahmoud</td>
+                                <td>22000101</td>
+                                <td>Student</td>
+                                <td>
+                                    <button class="edit-btn" onclick="editUser(this)">Edit</button>
+                                    <button class="remove-btn" onclick="removeUser(this)">Remove</button>
+                                    <button class="save-btn" style="display: none;" onclick="saveUser(this)">Save</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="user-buttons">
+                    <button id="addUserBtn1">Add User</button>
+                </div>
+            </div>
+
+            <div id="admin-content" class="tab-content">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search" id="searchInput2" onkeyup="filterTable('admin-content')">
+                </div>
+                <div id="userTable2">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>ID</th>
+                                <th>User Type</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="scroll">
+                            <tr>
+                                <td>Abdulla</td>
+                                <td>Albalooshi</td>
+                                <td>22000102</td>
+                                <td>Admin</td>
+                                <td>
+                                    <button class="edit-btn" onclick="editUser(this)">Edit</button>
+                                    <button class="remove-btn" onclick="removeUser(this)">Remove</button>
+                                    <button class="save-btn" style="display: none;" onclick="saveUser(this)">Save</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Bin</td>
+                                <td>Thabit</td>
+                                <td>22000103</td>
+                                <td>Admin</td>
+                                <td>
+                                    <button class="edit-btn" onclick="editUser(this)">Edit</button>
+                                    <button class="remove-btn" onclick="removeUser(this)">Remove</button>
+                                    <button class="save-btn" style="display: none;" onclick="saveUser(this)">Save</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="user-buttons">
+                    <button id="addUserBtn2">Add User</button>
+                </div>
+            </div>
+
+            <div id="librarian-content" class="tab-content"> <!-- New Content Section -->
+                <div class="search-bar">
+                    <input type="text" placeholder="Search" id="searchInput3" onkeyup="filterTable('librarian-content')">
+                </div>
+                <div id="userTable3">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>ID</th>
+                                <th>User Type</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="scroll">
+                            <tr>
+                                <td>Yousef</td>
+                                <td>Alrantisi</td>
+                                <td>22000104</td>
+                                <td>Librarian</td>
+                                <td>
+                                    <button class="edit-btn" onclick="editUser(this)">Edit</button>
+                                    <button class="remove-btn" onclick="removeUser(this)">Remove</button>
+                                    <button class="save-btn" style="display: none;" onclick="saveUser(this)">Save</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ahmed</td>
+                                <td>Awad</td>
+                                <td>22000105</td>
+                                <td>Librarian</td>
+                                <td>
+                                    <button class="edit-btn" onclick="editUser(this)">Edit</button>
+                                    <button class="remove-btn" onclick="removeUser(this)">Remove</button>
+                                    <button class="save-btn" style="display: none;" onclick="saveUser(this)">Save</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="user-buttons">
+                    <button id="addUserBtn3">Add User</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div id="extra">
+          <a href="contact.html"><p>Contact Us</p></a>
+          <a href="#" id="locationLink"><p>Location</p></a>
+        </div>
+  
+        <div id="locationInfo">
+          <div id="map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.3134528847527!2d55.40876267523257!3d25.125091477757444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f638c31a5196b%3A0xa93b38bd4f7c4542!2sThe%20British%20University%20in%20Dubai%20-%20BUiD!5e0!3m2!1sen!2sae!4v1717581589369!5m2!1sen!2sae"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <button id="closeLocationBtn">Close</button>
+        </div>
+  
+        <div id="social">
+          <a href="https://www.instagram.com/buid_team?igsh=eHUzNmVpZmJtbjh5"><img src="..insta.png" alt="" /></a>
+          <a href="https://x.com/buid_team?s=11"><img src="..twitter.png" alt="" /></a>
+          <a href="https://www.facebook.com/share/XbUhaG7nMmqmRBPa/?mibextid=LQQJ4d"><img src="..facebook.png" alt="" /></a>
+          <a href="https://www.linkedin.com/school/buid/"><img src="..linkedln.png" alt="" /></a>
+        </div>
+  
+        <div id="copyRight">
+          <img src="..copy1.png" alt="" />
+          &copy; 2024
+        </div>
+      </footer>
+
+
+    <div id="addUserModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add User</h2>
+            <form id="addUserForm">
+                <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+                </div>
+                <div class="form-group">
+                <label for="userId">ID:</label>
+                <input type="text" id="userId" name="userId" required>
+                </div>
+                <div class="form-group">
+                <label for="userType">User Type:</label>
+                <select id="userType" name="userType" required>
+                    <option value="Student">Student</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Librarian">Librarian</option> 
+                </select>
+                </div>
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="header.js"></script>
+    <script src="location.js"></script>
+    <script src="mood.js"></script>
+    <script>
+        document.getElementById('student').addEventListener('click', function() {
+            showContent('student-content');
+            setActiveTab('student');
+        });
+
+        document.getElementById('admin').addEventListener('click', function() {
+            showContent('admin-content');
+            setActiveTab('admin');
+        });
+
+        document.getElementById('librarian').addEventListener('click', function() { // New Event Listener
+            showContent('librarian-content');
+            setActiveTab('librarian');
+        });
+
+        function showContent(contentId) {
+            var contents = document.getElementsByClassName('tab-content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove('active');
+            }
+            document.getElementById(contentId).classList.add('active');
+        }
+
+        function setActiveTab(tabId) {
+            var tabs = document.getElementsByClassName('tab');
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active');
+            }
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        function filterTable(contentId) {
+            var input = document.getElementById('searchInput' + contentId.split('-')[0].replace('content', ''));
+            var filter = input.value.toUpperCase();
+            var table = document.getElementById(contentId).getElementsByTagName('table')[0];
+            var tr = table.getElementsByTagName('tr');
+
+            for (var i = 1; i < tr.length; i++) {
+                var td = tr[i].getElementsByTagName('td');
+                var showRow = false;
+
+                for (var j = 0; j < td.length; j++) {
+                    if (td[j]) {
+                        if (td[j].innerText.toUpperCase().indexOf(filter) > -1) {
+                            showRow = true;
+                        }
+                    }
+                }
+
+                if (showRow) {
+                    tr[i].style.display = '';
+                } else {
+                    tr[i].style.display = 'none';
+                }
+            }
+        }
+
+        var modal = document.getElementById('addUserModal');
+        var addUserBtns = document.getElementsByClassName('user-buttons');
+
+        for (var i = 0; i < addUserBtns.length; i++) {
+            addUserBtns[i].getElementsByTagName('button')[0].addEventListener('click', function() {
+                modal.style.display = 'block';
+            });
+        }
+
+        var span = document.getElementsByClassName('close')[0];
+        span.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        document.getElementById('addUserForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var form = event.target;
+            var firstName = form.firstName.value;
+            var lastName = form.lastName.value;
+            var userId = form.userId.value;
+            var userType = form.userType.value;
+
+            var newRow = document.createElement('tr');
+            newRow.innerHTML = `<td>${firstName}</td><td>${lastName}</td><td>${userId}</td><td>${userType}</td><td>
+                <button class="edit-btn" onclick="editUser(this)">Edit</button>
+                <button class="remove-btn" onclick="removeUser(this)">Remove</button>
+                <button class="save-btn" style="display: none;" onclick="saveUser(this)">Save</button></td>`;
+
+            var tableBody = document.getElementById(userType.toLowerCase() + '-content').getElementsByTagName('tbody')[0];
+            tableBody.appendChild(newRow);
+
+            modal.style.display = 'none';
+            form.reset();
+        });
+
+        function editUser(button) {
+            var row = button.closest('tr');
+            var tds = row.getElementsByTagName('td');
+            for (var i = 0; i < tds.length - 1; i++) {
+                var input = document.createElement('input');
+                input.type = 'text';
+                input.value = tds[i].innerText;
+                tds[i].innerText = '';
+                tds[i].appendChild(input);
+            }
+            button.style.display = 'none';
+            row.querySelector('.save-btn').style.display = 'inline-block';
+        }
+
+        function removeUser(button) {
+            var row = button.closest('tr');
+            row.remove();
+        }
+
+        function saveUser(button) {
+            var row = button.closest('tr');
+            var tds = row.getElementsByTagName('td');
+            for (var i = 0; i < tds.length - 1; i++) {
+                var input = tds[i].getElementsByTagName('input')[0];
+                tds[i].innerText = input.value;
+            }
+            button.style.display = 'none';
+            row.querySelector('.edit-btn').style.display = 'inline-block';
+        }
+    </script>
+</body>
+</html>

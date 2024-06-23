@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AMAYB</title>
+  <link rel="icon" href="logo1.png">
+  <link rel="stylesheet" href="Services.css" />
+  <link rel="stylesheet" href="Header_Footer.css" />
+</head>
+<body>
+  <header class="header">
+    <nav>
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+      <div class="logo">
+        <img src="logo1.png" alt="buid logo" />
+      </div>
+
+      <ul class="menu">
+        <li><a href="index_admin.html">Home</a></li>
+        <li>
+          <a href="#">About</a>
+          <ul class="subtitle1">
+            <li><a href="about_us_admin.html">About Us</a></li>
+            <li><a href="about_library_admin.html">About The Library</a></li>
+          </ul>
+          <ul class="subtitle2">
+            <li><a href="about_us_admin.html">About Us</a></li>
+            <li><a href="about_library_admin.html">About The Library</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Services</a>
+          <ul class="subtitle1">
+            <li><a href="Items_Settings_admin.html">Items Settings</a></li>
+            <li>
+              <a href="Meeting_Rooms_Settings_admin.html">Meeting Rooms Settings</a>
+            </li>
+            <li><a href="Requests_admin.html">Requests</a></li>
+          </ul>
+          <ul class="subtitle2">
+            <li><a href="Items_Settings_admin.html">Items Settings</a></li>
+            <li>
+              <a href="Meeting_Rooms_Settings_admin.html">Meeting Rooms Settings</a>
+            </li>
+            <li><a href="Requests_admin.html">Requests</a></li>
+          </ul>
+        </li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+
+
+      </ul>
+                <div class="feature">
+          <label class="darkmode">
+            <input type="checkbox" id="switch" />
+            <img class="sun" src="sun.png" />
+            <img class="moon" src="moon.png" />
+            <div class="back"></div>
+          </label>
+          <a class="viewusers" href="View Users.html">View Users</a>
+          <a href="profile_admin.html"><img class="profile-logo" src="user-128.png"/></a>
+        </div>
+    </nav>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="tabs">
+        <div id="rack1" class="tab active" style="cursor: pointer">Rack 1</div>
+        <div id="rack2" class="tab" style="cursor: pointer">Rack 2</div>
+        <div id="rack3" class="tab" style="cursor: pointer">Rack 3</div>
+      </div>
+
+      <div id="rack1-content" class="tab-content active">
+        <div class="search-bar">
+          <input type="text" placeholder="Search" id="searchInput1" onkeyup="filterTable('rack1')" />
+          <select id="itemType1" onchange="switchTable('rack1')">
+            <option value="books">Books</option>
+            <option value="magazines">Magazines</option>
+          </select>
+        </div>
+        <div id="rack1-books" class="rackTable" style="display: block">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>ISBN</th>
+                <th>Publication Date</th>
+                <th>Genre</th>
+                <th>NOC Available</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="tableData1" class="scroll">
+              <tr>
+                <td>The Haunting of Hill House</td>
+                <td>Shirley Jackson</td>
+                <td>978-0143039983</td>
+                <td>1959</td>
+                <td>Horror</td> 
+                <td>3</td>
+                <td>
+                  <button class="special-buttons" onclick="editRow(this)">Edit</button>
+                  <button class="special-buttons" style="display: none;" onclick="saveRow(this)">Save</button>
+                  <button class="remove-btn" onclick="removeRow(this)">Remove</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Good Omens</td>
+                  <td>Neil Gaiman, Terry Pratchett</td>
+                  <td>978-0060853983</td>
+                  <td>1990</td>
+                  <td>Comedy</td>
+                <td>5</td>
+                <td>
+                  <button class="special-buttons" onclick="editRow(this)">Edit</button>
+                  <button class="special-buttons" style="display: none;" onclick="saveRow(this)">Save</button>
+                  <button class="remove-btn" onclick="removeRow(this)">Remove</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="user-buttons">
+            <button id="addNewRowBtn" onclick="addEmptyRow('rack1-books')">Add Row</button>
+          </div>
+        </div>
+        <div id="rack1-magazines" class="rackTable" style="display: none">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Magazine Name</th>
+                <th>Issue</th>
+                <th>NOC</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody class="scroll">
+              <tr>
+                <td>Autocar UK</td>
+                <td>19/06/2024</td>
+                <td>5</td>
+                <td>
+                  <button class="special-buttons" onclick="editRow(this)">Edit</button>
+                  <button class="special-buttons" style="display: none;" onclick="saveRow(this)">Save</button>
+                  <button class="remove-btn" onclick="removeRow(this)">Remove</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Amateur Photographer</td>
+                <td>25/06/2024</td>
+                <td>6</td>
+                <td>
+                  <button class="special-buttons" onclick="editRow(this)">Edit</button>
+                  <button class="special-buttons" style="display: none;" onclick="saveRow(this)">Save</button>
+                  <button class="remove-btn" onclick="removeRow(this)">Remove</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="user-buttons">
+            <button onclick="addEmptyRow('rack1-magazines')">Add Row</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="rack2-content" class="tab-content">
+        <div class="search-bar">
+          <input type="text" placeholder="Search" id="searchInput2" onkeyup="filterTable('rack2')" />
+          <select id="itemType2" onchange="switchTable('rack2')">
+            <option value="books">Books</option>
+            <option value="magazines">Magazines</option>
+          </select>
+        </div>
+        <div id="rack2-books" class="rackTable" style="display: block">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>ISBN</th>
+                <th>Publication Date</th>
+                <th>Genre</th>
+                <th>NOC Available</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="tableData2" class="scroll">
+              <tr>
+                <td>A Thousand Splendid Suns</td>
+                <td>Khaled Hosseini</td>
+                <td>978-1594483851</td>
+                <td>2007</td>
+                <td>Drama</td>
+                <td>1</td>
+                <td>
+                  <button class="special-buttons" onclick="editRow(this)">Edit</button>
+                  <button class="special-buttons" style="display: none;" onclick="saveRow(this)">Save</button>
+                  <button class="remove-btn" onclick="removeRow(this)">Remove</button>
+                </td>
+              </tr>
+              <tr>
+                <td>The Night Circus</td>
+                  <td>Erin Morgenstern</td>
+                  <td>978-0307744432</td>
+                  <td>2011</td>
+                  <td>Fiction</td>
+                <td>6</td>
+                <td>
+                  <button class="special-buttons" onclick="editRow(this)">Edit</button>
+                  <button class="special-buttons" style="display: none;" onclick="saveRow(this)">Save</button>
+                  <button class="remove-btn" onclick="removeRow(this)">Remove</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="user-buttons">
+            <button id="addNewRowBtn" onclick="addEmptyRow('rackTable2')">Add Row</button>
+          </div>
+        </div>
+        <div id="rack2-magazines" class="rackTable" style="display: none">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Magazine Name</th>
+                <th>Issue</th>
+                <th>NOC</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody class="scroll">
+              <tr>
+                <td>Financial Times</td>
+                <td>22/06/2024</td>
+                <td>7</td>
+                <td>
+                  <button class="special-buttons" onclick="editRow(this)">Edit</button>
+                  <button class="special-buttons" style="display: none;" onclick="saveRow(this)">Save</button>
+                  <button class="remove-btn" onclick="removeRow(this)">Remove</button>
+                </td>
+              </tr>
+              <tr>
+                <td>The Times</td>
+                  <td>22/06/2024</td>
+                <td>3</td>
+                <td>
+                  <button class="special-buttons" onclick="editRow(this)">Edit</button>
+                  <button class="special-buttons" style="display: none;" onclick="saveRow(this)">Save</button>
+                  <button class="remove-btn" onclick="removeRow(this)">Remove</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="user-buttons">
+            <button id="addNewRowBtn" onclick="addEmptyRow('rackTable2')">Add Row</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="rack3-content" class="tab-content">
+        <div class="search-bar">
+          <input type="text" placeholder="Search" id="searchInput3" onkeyup="filterTable('rack3')" />
+          <select id="itemType3" onchange="switchTable('rack3')">
+            <option value="books">Books</option>
+            <option value="magazines">Magazines</option>
+          </select>
+        </div>
+        <div id="rack3-books" class="rackTable" style="display: block">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>ISBN</th>
+                <th>Publication Date</th>
+                <th>Genre</th>
+                <th>NOC Available</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="tableData3" class="scroll">
+              <tr>
+                <td>Pride and Prejudice</td>
+                <td>Jane Austen</td>
+                <td>978-1503290563</td>
+                <td>1813</td>
+                <td>Romance</td>
+                <td>2</td>
+                <td>
+                  <button class="special-buttons" onclick="editRow(this)">Edit</button>
+                  <button class="special-buttons" style="display: none;" onclick="saveRow(this)">Save</button>
+                  <button class="remove-btn" onclick="removeRow(this)">Remove</button>
+                </td>
+              </tr>
+              <tr>
+                <td>To Kill a Mockingbird</td>
+                  <td>Harper Lee</td>
+                  <td>978-0060935467</td>
+                  <td>1960</td>
+                  <td>Fiction</td>
+                <td>2</td>
+                <td>
+                  <button class="special-buttons" onclick="editRow(this)">Edit</button>
+                  <button class="special-buttons" style="display: none;" onclick="saveRow(this)">Save</button>
+                  <button class="remove-btn" onclick="removeRow(this)">Remove</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="user-buttons">
+            <button  id="addNewRowBtn" onclick="addEmptyRow('rackTable3')">Add Row</button>
+          </div>
+        </div>
+        <div id="rack3-magazines" class="rackTable" style="display: none">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Magazine Name</th>
+                <th>Issue</th>
+                <th>NOC</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody class="scroll">
+              <tr>
+                <td>The Guardian</td>
+                  <td>22/06/2024</td>
+                <td>2</td>
+                <td>
+                  <button class="special-buttons" onclick="editRow(this)">Edit</button>
+                  <button class="special-buttons" style="display: none;" onclick="saveRow(this)">Save</button>
+                  <button class="remove-btn" onclick="removeRow(this)">Remove</button>
+                </td>
+              </tr>
+              <tr>
+                <td>The Washington Post</td>
+                <td>22/06/2024</td>
+                <td>1</td>
+                <td>
+                  <button class="special-buttons" onclick="editRow(this)">Edit</button>
+                  <button class="special-buttons" style="display: none;" onclick="saveRow(this)">Save</button>
+                  <button class="remove-btn" onclick="removeRow(this)">Remove</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="user-buttons">
+           <div class="user-buttons">
+            <button id="addNewRowBtn" onclick="addEmptyRow('rackTable2')">Add Row</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div id="extra">
+      <a href="contact.html"><p>Contact Us</p></a>
+      <a href="#" id="locationLink"><p>Location</p></a>
+    </div>
+
+    <div id="locationInfo">
+      <div id="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.3134528847527!2d55.40876267523257!3d25.125091477757444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f638c31a5196b%3A0xa93b38bd4f7c4542!2sThe%20British%20University%20in%20Dubai%20-%20BUiD!5e0!3m2!1sen!2sae!4v1717581589369!5m2!1sen!2sae"
+          width="100%"
+          height="100%"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <button id="closeLocationBtn">Close</button>
+    </div>
+
+    <div id="social">
+      <a href="https://www.instagram.com/buid_team?igsh=eHUzNmVpZmJtbjh5"><img src="..insta.png" alt="" /></a>
+      <a href="https://x.com/buid_team?s=11"><img src="..twitter.png" alt="" /></a>
+      <a href="https://www.facebook.com/share/XbUhaG7nMmqmRBPa/?mibextid=LQQJ4d"><img src="..facebook.png" alt="" /></a>
+      <a href="https://www.linkedin.com/school/buid/"><img src="..linkedln.png" alt="" /></a>
+    </div>
+
+    <div id="copyRight">
+      <img src="..copy1.png" alt="" />
+      &copy; 2024
+    </div>
+  </footer>
+
+  <script src="header.js"></script>
+  <script src="location.js"></script>
+  <script src="mood.js"></script>
+  <script>
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab-content').forEach(content => {
+          content.classList.remove('active');
+        });
+        document.querySelectorAll('.tab').forEach(t => {
+          t.classList.remove('active');
+        });
+        tab.classList.add('active');
+        document.getElementById(`${tab.id}-content`).classList.add('active');
+      });
+    });
+  
+    function filterTable(rackId) {
+      const input = document.getElementById(`searchInput${rackId.substr(-1)}`);
+      const filter = input.value.toLowerCase();
+      const table = document.querySelector(`#${rackId}-content .rackTable`);
+      const rows = table.querySelectorAll('tbody tr');
+      rows.forEach(row => {
+        const cells = row.querySelectorAll('td');
+        let match = false;
+        cells.forEach(cell => {
+          if (cell.innerText.toLowerCase().includes(filter)) {
+            match = true;
+          }
+        });
+        row.style.display = match ? '' : 'none';
+      });
+    }
+  
+    function switchTable(rackId) {
+      const select = document.getElementById(`itemType${rackId.substr(-1)}`);
+      const selectedValue = select.value;
+      const bookTable = document.getElementById(`${rackId}-books`);
+      const magazineTable = document.getElementById(`${rackId}-magazines`);
+      if (selectedValue === 'books') {
+        bookTable.style.display = 'block';
+        magazineTable.style.display = 'none';
+      } else {
+        bookTable.style.display = 'none';
+        magazineTable.style.display = 'block';
+      }
+    }
+  
+    function editRow(button) {
+      const row = button.closest('tr');
+      row.querySelectorAll('td').forEach((cell, index) => {
+        if (index < row.children.length - 1) {
+          const value = cell.innerText;
+          cell.innerHTML = `<input type="text" value="${value}" />`;
+        }
+      });
+      button.style.display = 'none';
+      button.nextElementSibling.style.display = 'inline-block';
+    }
+  
+    function saveRow(button) {
+      const row = button.closest('tr');
+      row.querySelectorAll('td').forEach((cell, index) => {
+        if (index < row.children.length - 1) {
+          const input = cell.querySelector('input');
+          if (input) {
+            cell.innerText = input.value;
+          }
+        }
+      });
+      button.style.display = 'none';
+      button.previousElementSibling.style.display = 'inline-block';
+    }
+  
+    function addEmptyRow(rackTableId) {
+      const tableBody = document.getElementById(rackTableId).querySelector('tbody');
+      const tableType = rackTableId.includes('magazines') ? 'magazines' : 'books';
+      let newRow = document.createElement('tr');
+      
+      if (tableType === 'books') {
+        newRow.innerHTML = `
+          <td><input type="text" value="" /></td>
+          <td><input type="text" value="" /></td>
+          <td><input type="text" value="" /></td>
+          <td><input type="text" value="" /></td>
+          <td><input type="text" value="" /></td>
+          <td><input type="text" value="" /></td>
+          <td>
+            <button class="special-buttons" style="display: none;" onclick="editRow(this)">Edit</button>
+            <button class="special-buttons" onclick="saveRow(this)">Save</button>
+            <button class="remove-btn" onclick="removeRow(this)">Remove</button>
+          </td>
+        `;
+      } else if (tableType === 'magazines') {
+        newRow.innerHTML = `
+          <td><input type="text" value="" /></td>
+          <td><input type="text" value="" /></td>
+          <td><input type="text" value="" /></td>
+          <td>
+            <button class="special-buttons" style="display: none;" onclick="editRow(this)">Edit</button>
+            <button class="special-buttons" onclick="saveRow(this)">Save</button>
+            <button class="remove-btn" onclick="removeRow(this)">Remove</button>
+          </td>
+        `;
+      }
+  
+      tableBody.appendChild(newRow);
+    }
+  
+    function removeRow(button) {
+      const row = button.closest('tr');
+      row.remove();
+    }
+  
+    const switchToggle = document.getElementById('switch');
+    switchToggle.addEventListener('change', () => {
+      document.body.classList.toggle('dark-mode', switchToggle.checked);
+    });
+  </script>
+  
+  
+  
+</body>
+</html>

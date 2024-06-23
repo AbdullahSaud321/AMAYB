@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AMAYB</title>
+    <link rel="icon" href="logo1.png">
+    <link rel="stylesheet" href="Services.css" />
+    <link rel="stylesheet" href="Header_Footer.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+        <div class="logo">
+          <img src="logo1.png" alt="buid logo" />
+        </div>
+
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li>
+            <a href="#">About</a>
+            <ul class="subtitle1">
+              <li><a href="about_us.html">About Us</a></li>
+              <li><a href="about_library.html">About The Library</a></li>
+            </ul>
+            <ul class="subtitle2">
+              <li><a href="about_us.html">About Us</a></li>
+              <li><a href="about_library.html">About The Library</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Services</a>
+            <ul class="subtitle1">
+              <li><a href="Borrow_Items.html">Borrow Items</a></li>
+              <li>
+                <a href="login.html">Book Meeting Room</a>
+              </li>
+              <li><a href="login.html">Request Cards</a></li>
+            </ul>
+            <ul class="subtitle2">
+              <li><a href="Borrow_Items.html">Borrow Items</a></li>
+              <li>
+                <a href="login.html">Book Meeting Room</a>
+              </li>
+              <li><a href="login.html">Request Cards</a></li>
+            </ul>
+          </li>
+          <li><a href="volunteer.html">Volunteer</a></li>
+
+
+        </ul>
+                  <div class="feature">
+            <label class="darkmode">
+              <input type="checkbox" id="switch" />
+              <img class="sun" src="sun.png" />
+              <img class="moon" src="moon.png" />
+              <div class="back"></div>
+            </label>
+            <div class="links">
+              <a href="login.html"><p>Login</p></a>
+            </div>
+          </div>
+      </nav>
+    </header>
+    <section>
+      <div class="container">
+        <div class="tabs">
+          <div id="rack1" class="tab active" style="cursor: pointer">
+            Rack 1
+          </div>
+          <div id="rack2" class="tab" style="cursor: pointer">Rack 2</div>
+          <div id="rack3" class="tab" style="cursor: pointer">Rack 3</div>
+        </div>
+
+        <div id="rack1-content" class="tab-content active">
+          <div class="search-bar">
+            <input
+              type="text"
+              placeholder="Search"
+              id="searchInput1"
+              onkeyup="filterTable('rack1')"
+            />
+            <select id="itemType1" onchange="switchTable('rack1')">
+              <option value="books">Books</option>
+              <option value="magazines">Magazines</option>
+            </select>
+          </div>
+          <div id="rackTable1" class="rackTable" style="display: block">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Book Name</th>
+                  <th>Author</th>
+                  <th>ISBN</th>
+                  <th>Publication Date</th>
+                  <th>Genre</th>
+                  <th>NOC Available</th>
+                </tr>
+              </thead>
+              <tbody class="scroll">
+                <tr>
+                <td><a href="login.html">The Haunting of Hill House</a></td>
+                <td>Shirley Jackson</td>
+                  <td>978-0143039983</td>
+                  <td>1959</td>
+                  <td>Horror</td>
+                <td>3</td>
+                </tr>
+                <tr>
+                <td><a href="login.html">Good Omens</a></td>
+                <td>Neil Gaiman, Terry Pratchett</td>
+                <td>978-0060853983</td>
+                <td>1990</td>
+                <td>Comedy</td>
+                <td>5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div
+            id="rackTable1-magazines"
+            class="rackTable"
+            style="display: none"
+          >
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Magazine Name</th>
+                  <th>Issue</th>
+                  <th>NOC</th>
+                </tr>
+              </thead>
+              <tbody class="scroll">
+                <tr>
+                  <td><a href="login.html">Autocar UK</a></td>
+                  <td>19/06/2024</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td><a href="login.html">Amateur Photographer</a></td>
+                  <td>25/06/2024</td>
+                  <td>6</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="rack2-content" class="tab-content">
+          <div class="search-bar">
+            <input
+              type="text"
+              placeholder="Search"
+              id="searchInput2"
+              onkeyup="filterTable('rack1')"
+            />
+            <select id="itemType2" onchange="switchTable('rack2')">
+              <option value="books">Books</option>
+              <option value="magazines">Magazines</option>
+            </select>
+          </div>
+          <div id="rackTable2" class="rackTable" style="display: block">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Book Name</th>
+                  <th>Author</th>
+                  <th>ISBN</th>
+                  <th>Publication Date</th>
+                  <th>Genre</th>
+                  <th>NOC Available</th>
+                </tr>
+              </thead>
+              <tbody class="scroll">
+                <tr>
+                  <td><a href="login.html">A Thousand Splendid Suns</a></td>
+                  <td>Khaled Hosseini</td>
+                  <td>978-1594483851</td>
+                  <td>2007</td>
+                  <td>Drama</td>
+                <td>1</td>
+                </tr>
+                <tr>
+                  <td><a href="login.html">The Night Circus</a></td>
+                  <td>Erin Morgenstern</td>
+                  <td>978-0307744432</td>
+                  <td>2011</td>
+                  <td>Fiction</td>
+                  <td>6</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div
+            id="rackTable2-magazines"
+            class="rackTable"
+            style="display: none"
+          >
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Magazine Name</th>
+                  <th>Issue</th>
+                  <th>NOC</th>
+                </tr>
+              </thead>
+              <tbody class="scroll">
+                <tr>
+                  <td><a href="login.html">Financial Times</a></td>
+                  <td>22/06/2024</td>
+                  <td>7</td>
+                </tr>
+                <tr>
+                  <td><a href="login.html">The Times</a></td>
+                  <td>22/06/2024</td>
+                  <td>3</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="rack3-content" class="tab-content">
+          <div class="search-bar">
+            <input
+              type="text"
+              placeholder="Search"
+              id="searchInput3"
+              onkeyup="filterTable('rack1')"
+            />
+            <select id="itemType3" onchange="switchTable('rack1')">
+              <option value="books">Books</option>
+              <option value="magazines">Magazines</option>
+            </select>
+          </div>
+          <div id="rackTable3" class="rackTable" style="display: block">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Book Name</th>
+                  <th>Author</th>
+                  <th>ISBN</th>
+                  <th>Publication Date</th>
+                  <th>Genre</th>
+                  <th>NOC Available</th>
+                </tr>
+              </thead>
+              <tbody class="scroll">
+                <tr>
+                  <td><a href="login.html">Pride and Prejudice</a></td>
+                  <td>Jane Austen</td>
+                  <td>978-1503290563</td>
+                  <td>1813</td>
+                  <td>Romance</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td><a href="login.html">To Kill a Mockingbird</a></td>
+                  <td>Harper Lee</td>
+                  <td>978-0060935467</td>
+                  <td>1960</td>
+                  <td>Fiction</td>
+                  <td>2</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div
+            id="rackTable3-magazines"
+            class="rackTable"
+            style="display: none">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Magazine Name</th>
+                  <th>Issue</th>
+                  <th>NOC</th>
+                </tr>
+              </thead>
+              <tbody class="scroll">
+                <tr>
+                  <td><a href="login.html">The Guardian</a></td>
+                  <td>22/06/2024</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td><a href="login.html">The Washington Post</a></td>
+                  <td>22/06/2024</td>
+                  <td>1</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div id="extra">
+        <a href="contact.html"><p>Contact Us</p></a>
+        <a href="#" id="locationLink"><p>Location</p></a>
+      </div>
+
+      <div id="locationInfo">
+        <div id="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.3134528847527!2d55.40876267523257!3d25.125091477757444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f638c31a5196b%3A0xa93b38bd4f7c4542!2sThe%20British%20University%20in%20Dubai%20-%20BUiD!5e0!3m2!1sen!2sae!4v1717581589369!5m2!1sen!2sae"
+            width="100%"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <button id="closeLocationBtn">Close</button>
+      </div>
+
+      <div id="social">
+        <a href="https://www.instagram.com/buid_team?igsh=eHUzNmVpZmJtbjh5"><img src="..insta.png" alt="" /></a>
+        <a href="https://x.com/buid_team?s=11"><img src="..twitter.png" alt="" /></a>
+        <a href="https://www.facebook.com/share/XbUhaG7nMmqmRBPa/?mibextid=LQQJ4d"><img src="..facebook.png" alt="" /></a>
+        <a href="https://www.linkedin.com/school/buid/"><img src="..linkedln.png" alt="" /></a>
+      </div>
+
+      <div id="copyRight">
+        <img src="..copy1.png" alt="" />
+        &copy; 2024
+      </div>
+    </footer>
+
+    <script src="header.js"></script>
+    <script src="mood.js"></script>
+    <script src="location.js"></script>
+    <script>
+      function filterTable(rack) {
+        let input = document.getElementById("searchInput" + rack.slice(-1));
+        let filter = input.value.toUpperCase();
+        let table = document.querySelector(
+          "#" + rack + "-content .tab-content.active .table tbody"
+        );
+        let tr = table.getElementsByTagName("tr");
+        for (let i = 0; i < tr.length; i++) {
+          let td = tr[i].getElementsByTagName("td")[0];
+          if (td) {
+            let txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }
+        }
+      }
+
+      function switchTable(rack) {
+        let itemType = document.getElementById(
+          "itemType" + rack.slice(-1)
+        ).value;
+        let booksTable = document.getElementById("rackTable" + rack.slice(-1));
+        let magazinesTable = document.getElementById(
+          "rackTable" + rack.slice(-1) + "-magazines"
+        );
+
+        if (itemType === "books") {
+          booksTable.style.display = "block";
+          magazinesTable.style.display = "none";
+        } else if (itemType === "magazines") {
+          booksTable.style.display = "none";
+          magazinesTable.style.display = "block";
+        }
+      }
+
+      document.getElementById("rack1").addEventListener("click", function () {
+        document.getElementById("rack1-content").style.display = "block";
+        document.getElementById("rack2-content").style.display = "none";
+        document.getElementById("rack3-content").style.display = "none";
+        document.getElementById("rack1").classList.add("active");
+        document.getElementById("rack2").classList.remove("active");
+        document.getElementById("rack3").classList.remove("active");
+      });
+
+      document.getElementById("rack2").addEventListener("click", function () {
+        document.getElementById("rack1-content").style.display = "none";
+        document.getElementById("rack2-content").style.display = "block";
+        document.getElementById("rack3-content").style.display = "none";
+        document.getElementById("rack1").classList.remove("active");
+        document.getElementById("rack2").classList.add("active");
+        document.getElementById("rack3").classList.remove("active");
+      });
+
+      document.getElementById("rack3").addEventListener("click", function () {
+        document.getElementById("rack1-content").style.display = "none";
+        document.getElementById("rack2-content").style.display = "none";
+        document.getElementById("rack3-content").style.display = "block";
+        document.getElementById("rack1").classList.remove("active");
+        document.getElementById("rack2").classList.remove("active");
+        document.getElementById("rack3").classList.add("active");
+      });
+
+      function switchTable(rack) {
+        let itemType = document.getElementById(
+          "itemType" + rack.slice(-1)
+        ).value;
+        let booksTable = document.getElementById("rackTable" + rack.slice(-1));
+        let magazinesTable = document.getElementById(
+          "rackTable" + rack.slice(-1) + "-magazines"
+        ); // Updated selector
+
+        if (itemType === "books") {
+          booksTable.style.display = "block";
+          magazinesTable.style.display = "none";
+        } else if (itemType === "magazines") {
+          {
+            booksTable.style.display = "none";
+            magazinesTable.style.display = "block";
+          }
+        }
+      }
+
+      // Adding event listeners for the select elements
+      document
+        .getElementById("itemType1")
+        .addEventListener("change", function () {
+          switchTable("rack1");
+        });
+      document
+        .getElementById("itemType2")
+        .addEventListener("change", function () {
+          switchTable("rack2");
+        });
+      document
+        .getElementById("itemType3")
+        .addEventListener("change", function () {
+          switchTable("rack3");
+        });
+
+      document.getElementById("rack1").addEventListener("click", function () {
+        document.getElementById("rack1-content").style.display = "block";
+        document.getElementById("rack2-content").style.display = "none";
+        document.getElementById("rack3-content").style.display = "none";
+        document.getElementById("rack1").classList.add("active");
+        document.getElementById("rack2").classList.remove("active");
+        document.getElementById("rack3").classList.remove("active");
+      });
+
+      document.getElementById("rack2").addEventListener("click", function () {
+        document.getElementById("rack1-content").style.display = "none";
+        document.getElementById("rack2-content").style.display = "block";
+        document.getElementById("rack3-content").style.display = "none";
+        document.getElementById("rack1").classList.remove("active");
+        document.getElementById("rack2").classList.add("active");
+        document.getElementById("rack3").classList.remove("active");
+      });
+
+      document.getElementById("rack3").addEventListener("click", function () {
+        document.getElementById("rack1-content").style.display = "none";
+        document.getElementById("rack2-content").style.display = "none";
+        document.getElementById("rack3-content").style.display = "block";
+        document.getElementById("rack1").classList.remove("active");
+        document.getElementById("rack2").classList.remove("active");
+        document.getElementById("rack3").classList.add("active");
+      });
+
+      document.addEventListener('DOMContentLoaded', () => {
+  const tabs = document.querySelectorAll('.tab');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(tab => tab.classList.remove('active'));
+      tabContents.forEach(content => content.classList.remove('active'));
+
+      tab.classList.add('active');
+      tabContents[index].classList.add('active');
+    });
+  });
+
+  const filterTable = (rack) => {
+    const searchInput = document.getElementById(`searchInput${rack.slice(-1)}`).value.toLowerCase();
+    const table = document.getElementById(`${rack}-content`).querySelector('.table tbody');
+    const rows = table.querySelectorAll('tr');
+    
+    rows.forEach(row => {
+      const cells = row.querySelectorAll('td');
+      let found = false;
+      cells.forEach(cell => {
+        if (cell.textContent.toLowerCase().includes(searchInput)) {
+          found = true;
+        }
+      });
+      row.style.display = found ? '' : 'none';
+    });
+  };
+
+  const switchTable = (rack) => {
+    const itemType = document.getElementById(`itemType${rack.slice(-1)}`).value;
+    const bookTable = document.getElementById(`rackTable${rack.slice(-1)}`);
+    const magazineTable = document.getElementById(`rackTable${rack.slice(-1)}-magazines`);
+
+    if (itemType === 'books') {
+      bookTable.style.display = 'block';
+      magazineTable.style.display = 'none';
+    } else {
+      bookTable.style.display = 'none';
+      magazineTable.style.display = 'block';
+    }
+  };
+
+  document.getElementById("itemType1").addEventListener("change", function () {
+    switchTable("rack1");
+  });
+  document.getElementById("itemType2").addEventListener("change", function () {
+    switchTable("rack2");
+  });
+  document.getElementById("itemType3").addEventListener("change", function () {
+    switchTable("rack3");
+  });
+});
+    </script>
+  </body>
+</html>

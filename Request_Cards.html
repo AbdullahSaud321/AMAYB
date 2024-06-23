@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <link rel="stylesheet" href="BBR_Form.css"/>
+    <link rel="icon" href="logo1.png">
+    <title>AMAYB</title>
+  </head>
+
+  <body>
+    <div class="container" id="container">
+      <h1>Cards Request</h1>
+      <form id="cardRequestForm" autocomplete="off">
+        <div class="input-row">
+          <input type="text" id="fullName" placeholder="Full Name" required />
+          <input type="id" id="id" placeholder="ID" required />
+        </div>
+        <select id="facility" required>
+          <option value="" disabled selected>Choose your facility</option>
+          <option value="Facility1">Facility1</option>
+          <option value="Facility2">Facility2</option>
+          <option value="Facility3">Facility3</option>
+        </select>
+        <textarea
+          id="comments"
+          placeholder="Further Comments"
+          width="500cm"
+        ></textarea>
+        <button type="submit">Send Request</button>
+      </form>
+      <a class="linkMain" href="index_student.html">Go Back To Home Page</a>
+    </div>
+
+    <script>
+      document
+        .getElementById("cardRequestForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          var firstName = document.getElementById("fullName").value.trim();
+          var id = document.getElementById("id").value.trim();
+          var facility = document.getElementById("facility").value;
+
+          if (!fullName || !id || !facility) {
+            alert("Please fill out all fields.");
+            return;
+          }
+
+          alert("Request completed");
+
+          setTimeout(function () {
+            window.location.href = "index.html"; // Replace with your target page URL
+          }, 100);
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="BBR_Form.css" />
+    <link rel="icon" href="logo1.png">
+    <title>AMAYB</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Magazine Borrowing Form</h1>
+      <form id="magazineBorrowingForm">
+        <div class="input-row">
+          <input type="text" id="magazineName" name="magazineName" placeholder="Magazine Name"readonly/><br /><br />
+
+          <input type="text" id="issue" name="issue" placeholder="Issue Date" readonly/><br /><br />
+
+        </div>
+
+        <div class="input-row">
+          <input type="text" id="nocAvailable" name="nocAvailable" placeholder="NOC Available" readonly/><br /><br />
+
+          <input type="number" id="NOC" name="NOC" placeholder="NOC" required /><br /><br />
+        </div>
+
+        <button type="submit" value="Submit">Borrow</button>
+      </form>
+    </div>
+
+    <script>
+     document.getElementById("magazineBorrowingForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        var magazineName = document.getElementById("magazineName").value.trim();
+        var issue = document.getElementById("issue").value.trim();
+        var nocAvailable = document.getElementById("nocAvailable").value.trim();
+        var NOC = document.getElementById("NOC").value.trim();
+
+        if (!magazineName || !issue || !nocAvailable || !NOC) {
+          alert("Please fill out all fields.");
+          return;
+        }
+
+        if (parseInt(NOC) > parseInt(nocAvailable)) {
+          alert("The number of copies requested exceeds the available copies.");
+          return;
+        }
+
+        document.getElementById("nocAvailable").value = parseInt(nocAvailable) - parseInt(NOC);
+        alert("Borrowing completed");
+
+        setTimeout(function () {
+          window.location.href = "Borrow_Item.html";
+        }, 100);
+      });
+
+      window.onload = function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const magazineName = urlParams.get("magazineName");
+        const issue = urlParams.get("issue");
+        const nocAvailable = urlParams.get("nocAvailable");
+
+        document.getElementById("magazineName").value = magazineName || '';
+        document.getElementById("issue").value = issue || '';
+        document.getElementById("nocAvailable").value = nocAvailable || '';
+      };
+    </script>
+  </body>
+</html>

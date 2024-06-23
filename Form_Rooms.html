@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="BBR_Form.css">
+    <link rel="icon" href="logo1.png">
+    <title>AMAYB</title>
+</head>
+<body>
+    <div class="container">
+    <h1>Room Reservation Form</h1>
+    <form id="roomReservationForm">
+        <div class="input-row">
+        <input type="text" id="roomName" name="roomName" placeholder="Room Name" readonly><br><br>
+    
+        <input type="text" id="roomNumber" name="roomNumber" placeholder="Room Number" readonly><br><br>
+        
+        <input type="text" id="capacity" name="capacity" placeholder="Capacity" readonly><br><br>
+         </div>
+
+        <div class="input-row"> 
+        <input type="date" id="date" name="date" required><br><br>
+        
+        <input type="time" id="time" name="time" required><br><br>
+        </div>
+
+        <button type="submit" value="Submit">Book</button>
+    </form>
+    </div>
+
+    <script>
+    document
+        .getElementById("roomReservationForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          var roomName = document.getElementById("roomName").value.trim();
+          var roomNumber = document.getElementById("roomNumber").value.trim();
+          var capacity= document.getElementById("capacity").value.trim();
+          var date = document.getElementById("date").value.trim();
+          var time = document.getElementById("time").value.trim();
+         
+
+          if (!roomName || !roomNumber || !capacity || !date || !time) {
+            alert("Please fill out all fields.");
+            return;
+          }
+
+          alert("Booking completed");
+
+          setTimeout(function () {
+            window.location.href = "Book_Meeting_Room.html"; 
+          }, 100);
+        });
+
+        window.onload = function() {
+        // Get the query parameters from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        // Get the values of the query parameters
+        const roomName = urlParams.get('roomName');
+        const roomNumber = urlParams.get('roomNumber');
+        const capacity = urlParams.get('capacity');
+        
+        // Pre-fill the readonly fields with the retrieved values
+        document.getElementById('roomName').value = roomName;
+        document.getElementById('roomNumber').value = roomNumber;
+        document.getElementById('capacity').value = capacity;
+    };
+
+    document.getElementById("roomReservationForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        var roomName = document.getElementById("roomName").value.trim();
+        var roomNumber = document.getElementById("roomNumber").value.trim();
+        var capacity = document.getElementById("capacity").value.trim();
+        var date = document.getElementById("date").value.trim();
+        var time = document.getElementById("time").value.trim();
+
+        if (!roomName || !roomNumber || !capacity || !date || !time) {
+            alert("Please fill out all fields.");
+            return;
+        }
+
+        alert("Booking completed");
+
+        setTimeout(function() {
+            window.location.href = "Book_Meeting_Room.html";
+        }, 100);
+    });
+    </script>
+</body>
+</html>

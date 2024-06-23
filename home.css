@@ -1,0 +1,147 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #F5F5F5;
+    transition: .7s;
+    animation: slideIn 1.5s ease-in-out;
+}
+
+
+#mainContent{
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0 1rem;
+
+    
+}
+
+
+
+.article{
+    /* background-color:yellow; */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+}
+
+#mainContent .article img{
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: -1px 0px 16px -10px #3D3333;
+}
+
+.article h2{
+    font-size: 25px;
+    margin: 20px 0;
+}
+.article p{
+    text-align: justify;
+}
+
+.article .links {
+    margin-top: 30px;
+}
+
+.article .links a p {
+    width: 200px;
+}
+
+
+.light-mode{
+    background-color: #111010;
+    transition: 0.7s;
+}
+
+
+.light-mode #mainContent .article img{
+    box-shadow: -1px 0px 16px -10px whitesmoke;
+}
+.light-mode .article h2{
+    color: #B1B1FF;
+}
+
+.light-mode .article p{
+    color:whitesmoke;
+}
+
+.welcome{
+    font-size: 20px;
+    font-weight: bold;
+    color: #3D3333;
+}
+
+.light-mode .welcome{
+    font-size: 20px;
+    font-weight: bold;
+    color: #B1B1FF;
+}
+
+.viewusers{
+    color: #3D3333;
+    text-decoration: underline;
+}
+.viewusers:hover{
+    color: #B1B1FF;
+    text-decoration: none;
+}
+.light-mode .viewusers{
+    color: #B1B1FF;
+    text-decoration: underline;
+}
+.light-mode .viewusers:hover{
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+  }
+/* Your existing CSS here */
+
+@media screen and (max-width: 768px) {
+    #mainContent {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .article {
+        width: 90%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .article img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: none;
+    }
+
+    .article h2 {
+        font-size: 20px;
+        margin: 10px 0;
+    }
+
+    .article .links a p {
+        width: 150px;
+        font-size: 16px;
+    }
+}
+
+
+
+

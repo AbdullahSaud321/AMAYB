@@ -1,0 +1,432 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: #f5f5f5;
+    transition: .7s;
+    animation: slideIn 1.5s ease-in-out;
+}
+
+section{
+    width: 100%;
+    height: 520px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section .container {
+    width: 50%;
+    height: 450px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: auto;
+    
+}
+.tabs {
+    display: flex;
+    background-color: #3D3333;
+    color: #fff;
+}
+.tabs div {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+.tabs .active {
+    background-color: #fff;
+    color:#161313;
+}
+.tab-content {
+    padding: 20px;
+}
+
+.tab-content {
+    display: none;
+    transition: opacity 0.3s ease-in-out; /* Add transition property */
+}
+
+.tab-content.active {
+    display: block;
+    opacity: 1; /* Make active content visible */
+}
+
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #eaeaea;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.search-bar input {
+    flex: 1;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #3D3333;
+    outline: none;
+}
+
+.search-bar input:focus {
+    border: 3px solid #3D3333;
+    transition-duration: .1s;
+}
+.search-bar select {
+    border: 1ps solid #3D3333;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 10px;
+    outline: none;
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.table th, .table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+.table th {
+    background-color: #f2f2f2;
+}
+.scroll {
+    overflow-y: scroll;
+    height: 200px;
+}
+
+.user-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.user-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #3D3333;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+.light-mode .user-buttons button {
+    background-color: #B1B1FF;
+    color: #161313; 
+}
+.user-buttons button:hover {
+    background-color: #555;
+}
+
+
+.special-buttons {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #3D3333;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+.light-mode .special-buttons {
+    background-color: #B1B1FF;
+    color: #161313;
+}
+.special-buttons:hover {
+    background-color: #555;
+}
+
+.edit-btn{
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #3D3333;
+    color: #fff;
+    transition: background-color 0.3s ease; 
+}
+.light-mode .edit-btn {
+    background-color: #B1B1FF;
+    color: #161313;
+}
+.edit-btn:hover {
+    background-color: #555;
+}
+
+.save-btn{
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #3D3333;
+    color: #fff;
+    transition: background-color 0.3s ease; 
+}
+.light-mode .save-btn {
+    background-color: #B1B1FF;
+    color: #161313;
+}
+.save-btn:hover {
+    background-color: #555;
+}
+
+.remove-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #ff4d4d;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+.remove-btn:hover {
+    background-color: #ff1a1a;
+}
+
+.accept-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: limegreen;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+.accept-btn:hover {
+    background-color: green;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    margin-right: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #3D3333;
+    color: #fff;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+button[type="submit"]:hover {
+    background-color: #555;
+}
+
+.light-mode{
+    background-color: #111010;
+    transition: 0.7s;
+}
+
+.light-mode section .container{
+    background-color:#000;
+    transition: 0.7s;
+}
+
+.light-mode .tabs {
+    display: flex;
+    background-color: #B1B1FF;
+    color: #161313;
+    
+}
+
+.light-mode .tabs .active {
+    background-color: #000;
+    color: #fff;
+}
+
+.light-mode .table th {
+    color: #B1B1FF;
+    background-color: #000;
+}
+.light-mode .table td {
+    color:whitesmoke;
+}
+
+.light-mode .search-bar {
+    background-color: #000;
+    border: 1px solid whitesmoke;
+}
+
+.light-mode .search-bar input:focus {
+    border: 3px solid #B1B1FF;
+    transition-duration: .1s;
+}
+.hidden-content {
+    display: none;
+}
+
+tr td a{
+    color: #000;
+    text-decoration: underline;
+}
+
+a:hover{
+    color: rgb(86, 86, 228)
+}
+
+.light-mode tr td a{
+    color:whitesmoke;
+    text-decoration: underline;
+}
+
+.light-mode tr td a:hover{
+    color:#B1B1FF;
+}
+
+.download a{
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #3D3333;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+.download a:hover{
+    background-color: #555;
+}
+.welcome{
+    font-size: 20px;
+    font-weight: bold;
+    color: #3D3333;
+}
+
+.light-mode .welcome{
+    font-size: 20px;
+    font-weight: bold;
+    color: #B1B1FF;
+}
+.viewusers{
+    color: #3D3333;
+    text-decoration: underline;
+}
+.viewusers:hover{
+    color: #B1B1FF;
+    text-decoration: none;
+}
+.light-mode .viewusers{
+    color: #B1B1FF;
+    text-decoration: underline;
+}
+.light-mode .viewusers:hover{
+    color: whitesmoke;
+    text-decoration: none;
+}
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+  }
+
+@media (max-width: 768px) {
+    .tabs div {
+        padding: 5px;
+    }
+    .search-bar {
+        flex-direction: column;
+    }
+    .search-bar select {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    section .container {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+    .tabs div {
+        font-size: 14px;
+    }
+    .tab-content {
+        padding: 10px;
+    }
+    .search-bar input,
+    .search-bar select {
+        padding: 5px;
+        font-size: 14px;
+    }
+    .table th, .table td {
+        padding: 5px;
+    }
+    .user-buttons button,
+    .special-buttons,
+    .edit-btn,
+    .save-btn,
+    .remove-btn,
+    .accept-btn {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+    .form-group input,
+    .form-group select,
+    button[type="submit"] {
+        padding: 5px;
+        font-size: 14px;
+    }
+}
+

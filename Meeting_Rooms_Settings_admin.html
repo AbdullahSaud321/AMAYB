@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMAYB</title>
+    <link rel="icon" href="logo1.png">
+    <link rel="stylesheet" href="Services.css">
+    <link rel="stylesheet" href="Header_Footer.css">
+</head>
+<body>
+    <header class="header">
+        <nav>
+          <input type="checkbox" id="menu-toggle" />
+          <label for="menu-toggle" class="menu-icon">&#9776;</label>
+  
+          <div class="logo">
+            <img src="logo1.png" alt="buid logo" />
+          </div>
+  
+          <ul class="menu">
+            <li><a href="index_admin.html">Home</a></li>
+            <li>
+              <a href="#">About</a>
+              <ul class="subtitle1">
+                <li><a href="about_us_admin.html">About Us</a></li>
+                <li><a href="about_library_admin.html">About The Library</a></li>
+              </ul>
+              <ul class="subtitle2">
+                <li><a href="about_us_admin.html">About Us</a></li>
+                <li><a href="about_library_admin.html">About The Library</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Services</a>
+              <ul class="subtitle1">
+                <li><a href="Items_Settings_admin.html">Items Settings</a></li>
+                <li>
+                  <a href="Meeting_Rooms_Settings_admin.html">Meeting Rooms Settings</a>
+                </li>
+                <li><a href="Requests_admin.html">Requests</a></li>
+              </ul>
+              <ul class="subtitle2">
+                <li><a href="Items_Settings_admin.html">Items Settings</a></li>
+                <li>
+                  <a href="Meeting_Rooms_Settings_admin.html">Meeting Rooms Settings</a>
+                </li>
+                <li><a href="Requests_admin.html">Requests</a></li>
+              </ul>
+            </li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+  
+  
+          </ul>
+                    <div class="feature">
+              <label class="darkmode">
+                <input type="checkbox" id="switch" />
+                <img class="sun" src="sun.png" />
+                <img class="moon" src="moon.png" />
+                <div class="back"></div>
+              </label>
+              <a class="viewusers" href="View Users.html">View Users</a>
+              <a href="profile_admin.html"><img class="profile-logo" src="user-128.png"/></a>
+            </div>
+        </nav>
+      </header>
+    <section>
+        <div class="container">
+            <div class="tabs">
+                <div id="block1" class="tab active" style="cursor: pointer;">Block 1</div>
+                <div id="block2" class="tab" style="cursor: pointer;">Block 2</div>
+                <div id="block3" class="tab" style="cursor: pointer;">Block 3</div>
+            </div>
+            <div id="block1-content" class="tab-content active">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search" id="searchInput1" onkeyup="filterTable('1')">
+                </div>
+                <div id="booksTable1">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Room Name</th>
+                                <th>Room #</th>
+                                <th>Capacity</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="scroll">
+                            <tr>
+                                <td>Room 1</td>
+                                <td>123</td>
+                                <td>20</td>
+                                <td>
+                                    <button class="special-buttons" onclick="editRow(this)">Edit</button>
+                                    <button class="remove-btn" onclick="removeRow(this)">Remove</button>
+                                    <button class="special-buttons save-btn" onclick="saveRow(this)" style="display: none;">Save</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Room 2</td>
+                                <td>456</td>
+                                <td>10</td>
+                                <td>
+                                    <button class="special-buttons" onclick="editRow(this)">Edit</button>
+                                    <button class="remove-btn" onclick="removeRow(this)">Remove</button>
+                                    <button class="special-buttons save-btn" onclick="saveRow(this)" style="display: none;">Save</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="user-buttons">
+                        <button id="addNewRowBtn" onclick="addEmptyRow('1')">Add Row</button>
+                    </div>
+                </div>
+            </div>
+            <div id="block2-content" class="tab-content">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search" id="searchInput2" onkeyup="filterTable('2')">
+                </div>
+                <div id="booksTable2">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Room Name</th>
+                                <th>Room #</th>
+                                <th>Capacity</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="scroll">
+                            <tr>
+                                <td>Room 3</td>
+                                <td>789</td>
+                                <td>15</td>
+                                <td>
+                                    <button class="special-buttons" onclick="editRow(this)">Edit</button>
+                                    <button class="remove-btn" onclick="removeRow(this)">Remove</button>
+                                    <button class="special-buttons save-btn" onclick="saveRow(this)" style="display: none;">Save</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Room 4</td>
+                                <td>101</td>
+                                <td>25</td>
+                                <td>
+                                    <button class="special-buttons" onclick="editRow(this)">Edit</button>
+                                    <button class="remove-btn" onclick="removeRow(this)">Remove</button>
+                                    <button class="special-buttons save-btn" onclick="saveRow(this)" style="display: none;">Save</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="user-buttons">
+                        <button id="addNewRowBtn" onclick="addEmptyRow('2')">Add Row</button>
+                    </div>
+                </div>
+            </div>
+            <div id="block3-content" class="tab-content">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search" id="searchInput3" onkeyup="filterTable('3')">
+                </div>
+                <div id="booksTable3">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Room Name</th>
+                                <th>Room #</th>
+                                <th>Capacity</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="scroll">
+                            <tr>
+                                <td>Room 5</td>
+                                <td>121</td>
+                                <td>20</td>
+                                <td>
+                                    <button class="special-buttons" onclick="editRow(this)">Edit</button>
+                                    <button class="remove-btn" onclick="removeRow(this)">Remove</button>
+                                    <button class="special-buttons save-btn" onclick="saveRow(this)" style="display: none;">Save</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Room 6</td>
+                                <td>141</td>
+                                <td>10</td>
+                                <td>
+                                    <button class="special-buttons" onclick="editRow(this)">Edit</button>
+                                    <button class="remove-btn" onclick="removeRow(this)">Remove</button>
+                                    <button class="special-buttons save-btn" onclick="saveRow(this)" style="display: none;">Save</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="user-buttons">
+                        <button id="addNewRowBtn" onclick="addEmptyRow('3')">Add Row</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div id="extra">
+          <a href="contact.html"><p>Contact Us</p></a>
+          <a href="#" id="locationLink"><p>Location</p></a>
+        </div>
+  
+        <div id="locationInfo">
+          <div id="map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.3134528847527!2d55.40876267523257!3d25.125091477757444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f638c31a5196b%3A0xa93b38bd4f7c4542!2sThe%20British%20University%20in%20Dubai%20-%20BUiD!5e0!3m2!1sen!2sae!4v1717581589369!5m2!1sen!2sae"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <button id="closeLocationBtn">Close</button>
+        </div>
+  
+        <div id="social">
+          <a href="https://www.instagram.com/buid_team?igsh=eHUzNmVpZmJtbjh5"><img src="..insta.png" alt="" /></a>
+          <a href="https://x.com/buid_team?s=11"><img src="..twitter.png" alt="" /></a>
+          <a href="https://www.facebook.com/share/XbUhaG7nMmqmRBPa/?mibextid=LQQJ4d"><img src="..facebook.png" alt="" /></a>
+          <a href="https://www.linkedin.com/school/buid/"><img src="..linkedln.png" alt="" /></a>
+        </div>
+  
+        <div id="copyRight">
+          <img src="..copy1.png" alt="" />
+          &copy; 2024
+        </div>
+      </footer>
+
+    <script src="header.js"></script>
+    <script src="mood.js"></script>
+    <script src="location.js"></script>
+    <script>
+    function filterTable(block) {
+        let input = document.getElementById('searchInput' + block);
+        let filter = input.value.toUpperCase();
+        let table = document.getElementById('booksTable' + block);
+        let tr = table.getElementsByTagName('tr');
+        for (let i = 0; i < tr.length; i++) {
+            let td = tr[i].getElementsByTagName('td')[0];
+            if (td) {
+                let txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = '';
+                } else {
+                    tr[i].style.display = 'none';
+                }
+            }
+        }
+    }
+    
+    function removeRow(button) {
+        let row = button.closest('tr');
+        row.parentNode.removeChild(row);
+    }
+    
+    function editRow(button) {
+        const row = button.closest('tr');
+        row.querySelectorAll('td').forEach((cell, index) => {
+            if (index < row.children.length - 1) {
+                const value = cell.innerText;
+                cell.innerHTML = `<input type="text" value="${value}" />`;
+            }
+        });
+        button.style.display = 'none';
+        button.nextElementSibling.nextElementSibling.style.display = 'inline-block'; // Show the Save button
+    }
+    
+    function saveRow(button) {
+        const row = button.closest('tr');
+        row.querySelectorAll('td').forEach((cell, index) => {
+            if (index < row.children.length - 1) {
+                const input = cell.querySelector('input');
+                if (input) {
+                    cell.innerText = input.value;
+                }
+            }
+        });
+        button.style.display = 'none';
+        button.previousElementSibling.previousElementSibling.style.display = 'inline-block'; // Show the Edit button
+    }
+    
+    function addEmptyRow(block) {
+        let table = document.getElementById('booksTable' + block).getElementsByTagName('tbody')[0];
+        let newRow = table.insertRow();
+        newRow.innerHTML = `
+            <td><input type="text" value=""></td>
+            <td><input type="text" value=""></td>
+            <td><input type="text" value=""></td>
+            <td>
+                <button class="special-buttons" onclick="editRow(this)" style="display: none;">Edit</button>
+                <button class="remove-btn" onclick="removeRow(this)">Remove</button>
+                <button class="special-buttons save-btn" onclick="saveRow(this)">Save</button>
+            </td>
+        `;
+    }
+    
+    document.getElementById('block1').addEventListener('click', function() {
+        document.getElementById('block1-content').style.display = 'block';
+        document.getElementById('block2-content').style.display = 'none';
+        document.getElementById('block3-content').style.display = 'none';
+        document.getElementById('block1').classList.add('active');
+        document.getElementById('block2').classList.remove('active');
+        document.getElementById('block3').classList.remove('active');
+    });
+    
+    document.getElementById('block2').addEventListener('click', function() {
+        document.getElementById('block1-content').style.display = 'none';
+        document.getElementById('block2-content').style.display = 'block';
+        document.getElementById('block3-content').style.display = 'none';
+        document.getElementById('block1').classList.remove('active');
+        document.getElementById('block2').classList.add('active');
+        document.getElementById('block3').classList.remove('active');
+    });
+    
+    document.getElementById('block3').addEventListener('click', function() {
+        document.getElementById('block1-content').style.display = 'none';
+        document.getElementById('block2-content').style.display = 'none';
+        document.getElementById('block3-content').style.display = 'block';
+        document.getElementById('block1').classList.remove('active');
+        document.getElementById('block2').classList.remove('active');
+        document.getElementById('block3').classList.add('active');
+    });
+    
+    document.getElementById('locationLink').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.getElementById('locationInfo').style.display = 'block';
+    });
+    
+    document.getElementById('closeLocationBtn').addEventListener('click', function() {
+        document.getElementById('locationInfo').style.display = 'none';
+    });
+</script>    
+</body>
+</html>
